@@ -20,7 +20,7 @@
   <div ng-controller="mainCtrl">
     <a href="" ng-click="toggleForm()">+ Add a New Recipe</a>
 
-    <form ng-show="formIsVisible">
+    <form ng-show="formIsVisible" ng-submit=createRecipe();>
       <div>
         <label>Name</label>
         <input type="text" name="name" ng-model="recipe.name">
@@ -60,6 +60,6 @@
 
   <script src="scripts/app.js" type="text/javascript"></script>
   <script src="scripts/controllers/main.js" type="text/javascript"></script>
-  <!-- <script src="scripts/services/data.js" type="text/javascript"></script> -->
+  <script src="scripts/services/data.js" type="text/javascript"></script>
 </body>
 </html>

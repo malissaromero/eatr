@@ -1,1 +1,12 @@
-
+{
+  "recipe1": {
+    "name": "Squash Spaghetti",
+    "ingredients": "Salt, Pepper, Squash",
+    "calories" : "400"
+  },
+  "recipe2": {
+    "name": "Pizza",
+    "ingredients": "Cheese, Tomato, Bread",
+    "calories": "500"
+  }
+}
