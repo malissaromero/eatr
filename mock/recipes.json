@@ -1,1 +1,4 @@
-
+[
+  {"name": "Hamburger", "ingredients": "Beef, Lettuce", "calories": "500"},
+  {"name": "Pizza", "ingredients": "Cheese, Dough", "calories": "500"}
+]

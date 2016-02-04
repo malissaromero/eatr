@@ -41,8 +41,8 @@
   <!-- edit, save and delete buttons -->
   <div>
     <a href="" class="edit" ng-click="editRecipe($index); editRecipe = !editRecipe">Edit</a>
-    <a href="" class="save" ng-click="update($index); editRecipe = !editRecipe">Save</a>
-    <a href="" class="delete" ng-click="deleteRecipe(key)">Delete</a>
+    <a href="" class="save" ng-click="saveRecipe(recipe); editRecipe = !editRecipe">Save</a>
+    <a href="" class="delete" ng-click="deleteRecipe(recipe, $index)">Delete</a>
   </div>
 </div>
 </div>
