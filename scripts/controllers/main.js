@@ -5,7 +5,7 @@ angular
 .controller('mainCtrl', ['$scope', '$firebase',
   function($scope, $firebaseArray) {
 
-    var url = "https://glowing-heat-1887.firebaseio.com/recipes";
+    var url = "https://eatr.firebaseio.com/recipes";
     var fireRef = new Firebase(url);
 
     fireRef.set({
