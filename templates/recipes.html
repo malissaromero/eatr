@@ -1,0 +1,48 @@
+<!-- create functionality -->
+<div>
+  <a href="" ng-click="toggleForm()">+ Add a New Recipe</a>
+
+  <form ng-show="formIsVisible" ng-submit=createRecipe();>
+    <div>
+      <label>Name</label>
+      <input type="text" name="name" ng-model="recipe.name">
+    </div>
+
+    <div>
+      <label>Ingredients</label>
+      <input type="text" name="ingredients" ng-model="recipe.ingredients">
+    </div>
+
+    <div>
+      <label>Calories</label>
+      <input type="text" name="calories" ng-model="recipe.calories">
+    </div>
+
+    <button type="submit">Submit</button>
+  </form>
+
+<!-- edit, update and delete functionality -->
+<div ng-repeat="(key, recipe) in recipes">
+  <!-- show data -->
+  <div ng-show="!editRecipe">
+    <label ng-show="!editRecipe">{{recipe.name}}</label>
+    <label ng-show="!editRecipe">{{recipe.ingredients}}</label>
+    <label ng-show="!editRecipe">{{recipe.calories}}</label>
+  </div>
+
+  <!-- form for editing -->
+  <form ng-show="editRecipe">
+    <input type="text" ng-model="recipe.name">
+
+    <input type="text" ng-model="recipe.ingredients">
+    <input type="text" ng-model="recipe.calories">
+  </form>
+
+  <!-- edit, save and delete buttons -->
+  <div>
+    <a href="" class="edit" ng-click="editRecipe($index); editRecipe = !editRecipe">Edit</a>
+    <a href="" class="save" ng-click="update($index); editRecipe = !editRecipe">Save</a>
+    <a href="" class="delete" ng-click="deleteRecipe(key)">Delete</a>
+  </div>
+</div>
+</div>
