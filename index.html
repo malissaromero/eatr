@@ -16,9 +16,25 @@
   <h1>Eatr</h1>
   <recipes></recipes>
 
+  <div ng-controller="apiCtrl">
+    <div class="input-group search-bar">
+      <input type="text" ng-model="search" ng-model-options="{ debounce: 800 }" placeholder="Enter Calories">
+    </div>
+    <button type="submit" ng-click="fetch()">Submit</button>
+
+    <div>
+      {{matches.recipeName}}
+    </div>
+
+    <div>
+      <h1>////////////////</h1>
+      {{details}}
+    </div>
+  </div>
+
   <script src="scripts/app.js" type="text/javascript"></script>
   <script src="scripts/controllers/main.js" type="text/javascript"></script>
-  <script src="scripts/services/data.js" type="text/javascript"></script>
+  <!-- <script src="scripts/services/data.js" type="text/javascript"></script> -->
   <script src="scripts/directives/recipes.js" type="text/javascript"></script>
 </body>
 </html>

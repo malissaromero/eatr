@@ -50,9 +50,10 @@ angular
 
     this.editRecipe = function(index) {
       var recipe = this.recipes[index];
-        this.name = recipe.name.$save();
-        this.ingredients = recipe.ingredients.$save();
-        this.calories = recipe.calories.$save();
+        this.name = recipe.name;
+        this.ingredients = recipe.ingredients;
+        this.calories = recipe.calories;
+      recipe.$save();
     };
 
     $scope.deleteRecipe = function(key, recipe) {
@@ -60,4 +61,30 @@ angular
     };
 
   }
-  ]);
+  ])
+  .controller('apiCtrl', function($scope, $http) {
+    // $scope.$watch('search', function() {
+    //   fetch();
+    // });
+
+    $scope.search = "Hamburger";
+
+    $scope.fetch = function fetch() {
+      var appId = "fff5495f";
+      var keyId = "a462dbaf1a40d7b1e6f8e222b4b91f14"
+      $http.get("http://api.yummly.com/v1/api/recipes?_app_id=" + appId + "&_app_key=" + keyId + "&" + $scope.search, {
+        params : {}
+      })
+      .then(function(response) {
+        $scope.details = response.data;
+      });
+    }
+
+    $scope.update = function(name) {
+      $scope.search = movie.name;
+    };
+
+    $scope.select = function() {
+      this.setSelectionRange(0, this.value.length);
+    }
+  });
