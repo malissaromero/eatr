@@ -2,18 +2,26 @@
 
 angular
 .module('eatrApp')
-.controller('mainCtrl', ['$scope', 'dataService', '$firebase',
-  function($scope, dataService, $firebaseArray) {
+.controller('mainCtrl', ['$scope', '$firebase',
+  function($scope, $firebaseArray) {
 
     var url = "https://eatr.firebaseio.com/recipes";
     var fireRef = new Firebase(url);
 
-    $scope.recipes = $firebaseArray(fireRef);
+    fireRef.set({
+      "recipe1": {
+        "name": "Squash Spaghetti",
+        "ingredients": "Salt, Pepper, Squash",
+        "calories" : "400"
+      },
+      "recipe2": {
+        "name": "Bolongne Sandwich",
+        "ingredients": "Cheese, Tomato, Bread",
+        "calories": "500"
+      }
+    })
 
-    dataService.getRecipes(function(response) {
-      console.log(response.data)
-      $scope.recipes = response.data;
-    });
+    $scope.recipes = $firebaseArray(fireRef);
 
     $scope.formIsVisible = false
     $scope.toggleForm = function() {
@@ -32,7 +40,7 @@ angular
     };
 
     $scope.createRecipe = function() {
-      $scope.recipes.unshift({
+      $scope.recipes.$add({
         name: $scope.recipe.name,
         ingredients: $scope.recipe.ingredients,
         calories: $scope.recipe.calories
@@ -40,14 +48,17 @@ angular
       $scope.reset()
     };
 
-    $scope.saveRecipe = function(recipe) {
-      dataService.saveRecipe(recipe);
-    }
+    this.editRecipe = function(index) {
+      var recipe = this.recipes[index];
+        this.name = recipe.name;
+        this.ingredients = recipe.ingredients;
+        this.calories = recipe.calories;
+      recipe.$save();
+    };
 
-    $scope.deleteRecipe = function(index, recipe) {
-      dataService.deleteRecipe(recipe);
-      $scope.recipes.splice(index, 1);
+    $scope.deleteRecipe = function(key, recipe) {
+      $scope.recipes.$remove(key);
     };
 
   }
-  ]);
+]);
