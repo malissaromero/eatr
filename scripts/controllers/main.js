@@ -63,15 +63,11 @@ angular
   }
   ])
   .controller('apiCtrl', function($scope, $http) {
-    // $scope.$watch('search', function() {
-    //   fetch();
-    // });
-
-    $scope.search = "burger";
 
     $scope.fetchRecipe = function() {
+      $scope.search = null;
       $http.get("https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search?", {
-        headers : {"X-Mashape-Key" : "xxxxxxxxxxxxxxxx"},
+        headers : {"X-Mashape-Key" : "xxx"},
         params : {"query" : $scope.search}
       })
       .then(function(response) {
