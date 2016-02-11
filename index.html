@@ -19,14 +19,15 @@
   <recipes></recipes>
 
   <div ng-controller="apiCtrl">
-    <input type="text" ng-model="search" ng-model-options="{ debounce: 800 }">
+    <input type="text" ng-model="recipe.search" ng-model-options="{ debounce: 800 }">
     <button type="submit" ng-click="fetchRecipe()">Submit</button>
 
     <div>
-      <p>{{details.results[0].title}}</p>
-      <p>{{details.results[1].title}}</p>
-      <p>{{details.results[2].title}}</p>
-      <p>{{details.results[3].title}}</p>
+      <p>{{details.matches[0].recipeName}}</p>
+      <p>{{details.matches[1].recipeName}}</p>
+      <p>{{details.matches[2].recipeName}}</p>
+      <p>{{details.matches[3].recipeName}}</p>
+      {{details}}
     </div>
   </div>
 

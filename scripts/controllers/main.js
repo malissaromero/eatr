@@ -64,15 +64,33 @@ angular
   ])
   .controller('apiCtrl', function($scope, $http) {
 
+    $scope.recipe = {
+      search: ''
+    }
+
     $scope.fetchRecipe = function() {
-      $scope.search = null;
-      $http.get("https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search?", {
-        headers : {"X-Mashape-Key" : "xxx"},
-        params : {"query" : $scope.search}
+      console.log($scope.recipe.search)
+      $http.get("http://api.yummly.com/v1/api/recipes?", {
+        headers : {
+          "X-Yummly-App-ID" : "xxx",
+          "X-Yummly-App-Key" : "xxx"},
+        params : {"q" : $scope.recipe.search}
       })
       .then(function(response) {
         $scope.details = response.data;
       });
-    }
+      //
+      // $http.get("https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search?", {
+      //   headers : {"X-Mashape-Key" : "d93JcjOckUmshXsczST1JtjOCcVMp1BHoYkjsn0290ypBfguF3"},
+      //   params : {"query" : $scope.search}
+      // })
+      // .then(function(response) {
+      //   $scope.related = response.data;
+      // });
+    };
+
+    // $scope.update = function(movie) {
+    //   $scope.search = movie.Title
+    // };
 
   });
