@@ -67,24 +67,16 @@ angular
     //   fetch();
     // });
 
-    $scope.search = "Hamburger";
+    $scope.search = "burger";
 
-    $scope.fetch = function fetch() {
-      var appId = "fff5495f";
-      var keyId = "a462dbaf1a40d7b1e6f8e222b4b91f14"
-      $http.get("http://api.yummly.com/v1/api/recipes?_app_id=" + appId + "&_app_key=" + keyId + "&" + $scope.search, {
-        params : {}
+    $scope.fetchRecipe = function() {
+      $http.get("https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search?", {
+        headers : {"X-Mashape-Key" : "xxxxxxxxxxxxxxxx"},
+        params : {"query" : $scope.search}
       })
       .then(function(response) {
         $scope.details = response.data;
       });
     }
 
-    $scope.update = function(name) {
-      $scope.search = movie.name;
-    };
-
-    $scope.select = function() {
-      this.setSelectionRange(0, this.value.length);
-    }
   });
