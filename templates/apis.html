@@ -1,0 +1,33 @@
+<section class="api-section" style="background-image: url(css/photos/cooking-background.png);">
+  <div class=".container">
+    <div class="row search-section">
+      <div class="col-md-4">
+        <h3><span>The</span>Word Word</h3>
+        <p>Word Word Word</p>
+        <p>Word Word Word</p>
+        <p>Word Word Word</p>
+        <p>Word Word Word</p>
+        <input type="text" ng-model="recipe.search">
+        <button type="submit" ng-click="fetchRecipes()">Submit</button>
+      </div>
+    </div>
+    <!-- <input type="text" ng-model="recipe.id">
+    <button type="submit" ng-click="fetchRecipeId()">Submit</button> -->
+    <!-- {{idDetails}} -->
+    <!-- <h1>/////</h1>
+    {{idDetails.ingredientLines}}
+    <a href="{{idDetails.images[0].hostedLargeUrl}}">picture</a>
+    {{idDetails.images[0]}}
+    {{idDetails.name}} -->
+    <!-- {{details.matches[0].id}} -->
+    <div class="row search-results">
+      <div class="col-md-6">
+        <a href="">{{details.matches[0].recipeName}}</a>
+        <a href="">{{details.matches[1].recipeName}}</a>
+        <a href="">{{details.matches[2].recipeName}}</a>
+        <a href="">{{details.matches[3].recipeName}}</a>
+      </div>
+    </div>
+
+  </div>
+</section>

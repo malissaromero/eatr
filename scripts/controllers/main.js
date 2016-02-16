@@ -68,14 +68,29 @@ angular
       search: ''
     }
 
-    $scope.fetchRecipe = function() {
+    $scope.fetchRecipes = function() {
       console.log($scope.recipe.search)
       $http.get("http://api.yummly.com/v1/api/recipes?", {
-        params : {"q" : $scope.recipe.search}
+        headers : {
+          },
+        params : {
+          "q" : $scope.recipe.search,
+          "requirePictures" : "true"}
       })
       .then(function(response) {
         $scope.details = response.data;
       });
     };
+
+    // $scope.fetchRecipeId = function() {
+    //   $http.get("http://api.yummly.com/v1/api/recipe/" + $scope.recipe.id, {
+    //     headers : {
+    //       "X-Yummly-App-ID" : "fff5495f",
+    //       "X-Yummly-App-Key" : "a462dbaf1a40d7b1e6f8e222b4b91f14"}
+    //     })
+    //     .then(function(response) {
+    //       $scope.idDetails = response.data
+    //     });
+    //   };
 
   });

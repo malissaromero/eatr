@@ -6,15 +6,6 @@
   margin-right: -15px;
 }
 
-.navigation , div.jumbotron{
-  /*background-color: #f39c12*/
-  /*background-color: #EEEDE6*/
-}
-
-.navigation {
-  /*position: fixed;*/
-}
-
 .brand-name {
   font-family: 'Grand Hotel', serif;
   font-size: 70px;
@@ -34,8 +25,28 @@
   font-weight: 600;
 }
 
+/* unvisited link */
+a:link {
+  text-decoration: none;
+}
+
+/* visited link */
+a:visited {
+  text-decoration: none;
+}
+
+/* mouse over link */
 a:hover {
   text-decoration: none;
+}
+
+/* selected link */
+a:active {
+  text-decoration: none;
+}
+
+a.nav-button {
+  color: #fff;
 }
 
 .spacer {
@@ -68,15 +79,23 @@ h1, h3 {
   font-weight: 300;
 }
 
-.btn {
+.btn:link {
   border: 0;
   background: #f39c12;
   border-radius: 4px;
   color: #fff;
 }
 
+.btn:visited {
+  background-color: #f39c12;
+}
+
 .btn:hover {
   background-color: #A6CFE0;
+}
+
+.btn:active {
+  background-color:  #A6CFE0;
 }
 
 .about {
@@ -86,8 +105,9 @@ h1, h3 {
   padding: 7rem 70px;
 }
 
-.about-us {
-  /*margin: 100px 0 70px 70px;*/
+.about-row {
+  margin-top: 60px;
+  margin-bottom: 140px;
 }
 
 .about-text {
@@ -111,5 +131,201 @@ h1, h3 {
   font-size: 17px;
   font-weight: 600;
   line-height: 3;
+  color: #f39c12;
+}
+
+.get-started:hover {
+  color: #A6CFE0;
+}
+
+.img-circle {
+  width: 60%;
+  height: auto;
+}
+
+.picture-two {
+  position: relative;
+  top: 127px;
+  right: -250px;
+}
+
+.picture-one {
+  position: absolute;
+  top: -46px;
+}
+
+.api-section {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.search-section {
+  background-color: #f39c12;
+  font-family: Raleway, sans-serif;
+  padding: 7rem 70px;
+}
+
+.search-section span {
+  display: block;
+  font-size: .5em;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.search-section h3 {
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.search-section h3 p {
+  color: #fff;
+  text-align: center;
+}
+
+.search-results {
+  background-color: #eeede6;
+}
+
+.search-results img {
+  width: 133px;
+  height: auto;
+  position: relative;
+}
+
+.search-results a {
+  position: absolute;
+  color: #fff;
+  bottom: 34pxpx;
+  font-size: 18px;
+  left: 40px;
+  font-family: Raleway, sans-serif;
+  font-weight: 400;
+}
+
+
+
+
+
+
+
+
+
+
+.my-recipes-section {
+  background-color: #eeede6;
+  font-family: Raleway, sans-serif;
+  color: #111;
+  padding: 7rem 70px;
+}
+
+.my-recipes-section h2 {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 30px;
+  font-weight: 400;
+}
+
+.my-recipes-headers {
+  background-color: #fff;
+  padding-bottom: 1.5rem;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.my-recipes-headers h3 {
+  font-weight: 400;
+  line-height: 1.25;
+  font-size: 24px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.my-recipes-headers p {
+  text-align: center;
+}
+
+.add-recipe {
+  color: #8F8F8F;
+  font-size: 20px;
+  line-height: 2;
+  font-weight: 400;
+}
+
+.add-recipe:visited {
+  color: #8F8F8F;
+}
+
+.add-recipe:hover {
+  color: #111;
+}
+
+.my-recipes-list {
+  background-color: #fff;
+  padding-bottom: 1.5rem;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.my-recipes-list label {
+  font-size: 20px;
+  line-height: 2;
+  font-weight: 400;
+}
+
+.recipes {
+  padding: 17px 0 18px 0;
+}
+
+.items {
+  display: inline;
+}
+
+.actions {
+  font-size: 20px;
+  line-height: 2;
+  font-weight: 400;
+  float: right;
+}
+
+.recipes.editing-recipe .actions{
+  margin-top: -34px;
+}
+
+.edit, .save, .delete {
+  color: #ECA07C;
+}
+
+.edit:visited, .save:visited, .delete:visited {
+  color: #e16120;
+}
+
+.edit:hover, .save:hover, .delete:hover {
+  color: #ECA07C;
+}
+
+.footer {
+  background: #292929;
+  text-align: center;
+  font-family: Raleway,sans-serif;
+  font-weight: 600;
+  line-height: 5;
+}
+
+.footer a {
+  padding: 0 5rem;
+  color: #fff;
+  font-size: 11px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.second-footer {
+  background: #363636;
+  padding: 3rem;
+}
+
+.second-footer small {
+  font-weight: 300;
   color: #f39c12;
 }

@@ -4,4 +4,10 @@ angular.module('eatrApp')
     templateUrl: 'templates/recipes.html',
     controller: 'mainCtrl'
   }
-});
+})
+.directive('apis', function() {
+  return {
+    templateUrl: 'templates/apis.html',
+    controller: 'apiCtrl'
+  }
+})

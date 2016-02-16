@@ -20,11 +20,11 @@
   <script src="https://cdn.firebase.com/libs/angularfire/0.7.1/angularfire.js"></script>
 </head>
 <body>
+
+  <!-- navigation bar and introduction -->
   <nav class="navigation">
-    <!-- <img src="css/photos/dinner.jpg" alt="Smiley face" height="142" width="142"> -->
+    <div class=".container">
       <div class="row" style="background-image: url(css/photos/dinner2.jpg);">
-
-
         <div class="col-md-4">
           <h1 class="brand-name">eatr</h1>
         </div>
@@ -39,9 +39,7 @@
           <a href="" class="nav-button">Log Out</a>
         </div>
 
-    <div class="row">
-      <div class="col-md-7">
-        <div class="jumbotron">
+        <div class="col-md-7 jumbotron">
           <h1>Welcome to Eatr</h1>
           <h3>Create Recipes or browse recipes and be cool.</h3>
           <p>There are cool things happening.</p>
@@ -49,56 +47,53 @@
         </div>
       </div>
     </div>
-    </div>
   </nav>
 
+  <!-- about -->
   <section class="about">
     <div class=".container">
-      <div class="row">
+      <div class="row about-row">
         <div class="col-md-6">
-          <h2 class="about-text">About
+          <h2 class="about-text">Learn More
             <span class="minor-text">About</span>
-          About</h2>
+          Eatr</h2>
           <div class="about-us">
-          <p>The Yummly Recipe API lets you integrate recipes and faceted recipe search into your websites or mobile applications.</p>
-          <p>Since Yummly understands the recipe – ingredients, diets, allergies, nutrition, taste, techniques & more. We can connect your users with the best recipes available for their unique food preferences.</p>
+            <p>The Eatr Application lets you search over 1 million recipes. You can add them to your personal recipes to better organize dinner time and your shopping lists.</p>
+            <p>Since Eatr understands the recipe search, We make an effort to connect you with the best recipes.</p>
           </div>
-          <p class="get-started">Get Started</p>
+          <a href="" class="get-started">Get Started</a>
         </div>
         <div class="col-md-6">
-          <h2>hello</h2>
-          <p>hello</p>
-          <p>hello</p>
-          <p>hello</p>
+          <img src="css/photos/woman_cooking.jpg" alt="..." class="img-circle picture-one">
+          <img src="css/photos/salad.jpg" alt="..." class="img-circle picture-two">
         </div>
       </div>
     </div>
   </section>
 
-  <footer>
+  <!-- search recipes -->
+  <apis></apis>
+
+  <!-- user's recipes -->
+  <recipes></recipes>
+
+  <footer class="footer">
     <div class=".container">
       <div class="row">
         <div class="col-md-12">
-
+          <a href="">Button</a>
+          <a href="">Button</a>
+          <a href="">Button</a>
+        </div>
+      </div>
+      <div class="row second-footer">
+        <div class="col-md-12">
+          <small>© 2016 eatr</small>
         </div>
       </div>
     </div>
   </footer>
 
-  <recipes></recipes>
-
-  <div ng-controller="apiCtrl">
-    <input type="text" ng-model="recipe.search">
-    <button type="submit" ng-click="fetchRecipe()">Submit</button>
-
-    <div>
-      <p>{{details.matches[0].recipeName}}</p>
-      <p>{{details.matches[1].recipeName}}</p>
-      <p>{{details.matches[2].recipeName}}</p>
-      <p>{{details.matches[3].recipeName}}</p>
-      {{details.map(response)}}
-    </div>
-  </div>
 
   <link href="css/styles.css" rel="stylesheet" type="text/css">
   <script src="scripts/app.js" type="text/javascript"></script>
