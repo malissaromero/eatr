@@ -22,6 +22,10 @@
   font-weight: 600;
 }
 
+.transparent {
+  color: transparent;
+}
+
 /* unvisited link */
 a:link {
   text-decoration: none;
@@ -48,7 +52,8 @@ a.nav-button {
 
 .spacer {
   display: inline-block;
-  color: #fff;
+  color: transparent;
+  /*color: #fff*/
 }
 
 .jumbotron {
@@ -163,9 +168,9 @@ h1, h3 {
   padding-bottom: 3rem;
 }
 
-.search-function h3 {
+/*.search-function h3 {
   margin-top: 30px;
-}
+}*/
 
 .search-function input {
   margin: 0 0 15px 77px;

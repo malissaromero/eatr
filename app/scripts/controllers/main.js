@@ -66,6 +66,30 @@ angular
   ])
   .controller('apiCtrl', function($scope, $http) {
 
+    // $scope.plateTwoIsVisible = false
+    // $scope.togglePlateTwo = function() {
+    //   if($scope.plateTwoIsVisible) {
+    //     $scope.plateTwoIsVisible = false
+    //   }
+    //   else {
+    //     $scope.plateTwoIsVisible = true
+    //   }
+    // };
+    //
+    $scope.plateThreeIsVisible = false
+    $scope.togglePlateThree = function() {
+      if($scope.plateThreeIsVisible) {
+        $scope.plateThreeIsVisible = false
+      }
+      else {
+        $scope.plateThreeIsVisible = true
+      }
+    };
+
+    // $scope.$watch('search', function() {
+    //   $scope.fetchRecipes();
+    // });
+
     $scope.recipe = {
       search: ''
     }
@@ -81,12 +105,16 @@ angular
       })
       .then(function(response) {
         $scope.details = response.data;
+        $scope.recipeId = {
+          id: $scope.details.matches[0].id
+        }
+        $scope.fetchRecipeId()
       });
     };
 
-    $scope.recipeId = {
-      id: 'Bourbon-Burger-1303425'
-    }
+    // $scope.recipeId = {
+    //   id: 'Bourbon-Burger-1303425'
+    // }
 
     $scope.fetchRecipeId = function() {
       $http.get("http://api.yummly.com/v1/api/recipe/" + $scope.recipeId.id, {
@@ -95,8 +123,6 @@ angular
         })
         .then(function(response) {
           $scope.idDetails = response.data
-          $scope.ingredients = JSON.parse($scope.idDetails.ingredientLines)
-
         });
       };
 
