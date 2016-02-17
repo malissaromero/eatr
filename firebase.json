@@ -1,0 +1,9 @@
+{
+  "firebase": "eatr",
+  "public": "app",
+  "ignore": [
+    "firebase.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}
