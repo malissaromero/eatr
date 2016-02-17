@@ -95,7 +95,29 @@ angular
         })
         .then(function(response) {
           $scope.idDetails = response.data
+          $scope.ingredients = JSON.parse($scope.idDetails.ingredientLines)
+
         });
       };
+
+      // $scope.getIngredients = function(ingredient) {
+      //   return "Ingredients";
+      // };
+
+      // $scope.ingredients = JSON.parse($scope.idDetails.ingredientLines)
+
+      // $scope.recipeDetails = {
+      //   ingredientLines: ''
+      // }
+      //
+      // var jsonString = $scope.recipeDetails.ingredientLines
+      //
+      // var obj = JSON.parse(jsonString);
+      // for (var i = 0; i < obj.length; i++){
+      //   var ingredient = new Ingredient();
+      //   ingredient.setAttribute('src', obj[i][2] + obj[i][1]);
+      //   document.body.appendChild(ingredient);
+      //   console.log("done")
+      // }
 
   });
