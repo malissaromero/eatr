@@ -10,14 +10,16 @@ angular
 
     fireRef.set({
       "recipe1": {
-        "name": "Squash Spaghetti",
-        "ingredients": "Salt, Pepper, Squash",
-        "calories" : "400"
+        "name": "PB&J Sandwich",
+        "ingredients": "Peanut Butter, Jelly, Bread"
       },
       "recipe2": {
-        "name": "Bolongne Sandwich",
-        "ingredients": "Cheese, Tomato, Bread",
-        "calories": "500"
+        "name": "Macaroni and Cheese",
+        "ingredients": "Cheese, Macaroni"
+      },
+      "recipe3": {
+        "name": "Grilled Cheese",
+        "ingredients": "American Cheddar, Bread"
       }
     })
 
@@ -82,15 +84,19 @@ angular
       });
     };
 
-    // $scope.fetchRecipeId = function() {
-    //   $http.get("http://api.yummly.com/v1/api/recipe/" + $scope.recipe.id, {
-    //     headers : {
-    //       "X-Yummly-App-ID" : "fff5495f",
-    //       "X-Yummly-App-Key" : "a462dbaf1a40d7b1e6f8e222b4b91f14"}
-    //     })
-    //     .then(function(response) {
-    //       $scope.idDetails = response.data
-    //     });
-    //   };
+    $scope.recipeId = {
+      id: 'Bourbon-Burger-1303425'
+    }
+
+    $scope.fetchRecipeId = function() {
+      $http.get("http://api.yummly.com/v1/api/recipe/" + $scope.recipeId.id, {
+        headers : {
+          "X-Yummly-App-ID" : "fff5495f",
+          "X-Yummly-App-Key" : "a462dbaf1a40d7b1e6f8e222b4b91f14"}
+        })
+        .then(function(response) {
+          $scope.idDetails = response.data
+        });
+      };
 
   });

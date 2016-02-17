@@ -155,14 +155,64 @@ h1, h3 {
 }
 
 .api-section {
-  padding-top: 60px;
+  padding-top: 43px;
   padding-bottom: 60px;
+  background-repeat: no-repeat;
+  padding: 7rem 70px;
+}
+
+.search-function {
+  /*background-color: #f39c12;*/
+  padding-bottom: 3rem;
+}
+
+.search-function h3 {
+  margin-top: 30px;
+}
+
+.search-function input {
+  margin: 0 0 15px 77px;
+}
+
+.recipe-search-button {
+  border: 0;
+  background: #fff;
+  border-radius: 4px;
+  color: #f39c12;
+}
+
+.recipe-search-button:visited {
+  background: #f39c12;
+}
+
+.recipe-search-button:hover {
+  background-color: #A6CFE0;
+}
+
+.plates {
+  /*float: left;
+  padding: 3rem;*/
+}
+
+.plate-one {
+  background: #e16120;
+  height: 600px;
+}
+
+.plate-two {
+  background: #da5d1d;
+  height: 600px;
+}
+
+.plate-three {
+  background: #c74c10;
+  height: 600px;
 }
 
 .search-section {
-  background-color: #f39c12;
   font-family: Raleway, sans-serif;
-  padding: 7rem 70px;
+  color: #fff;
+  text-align: center;
 }
 
 .search-section span {
@@ -183,33 +233,21 @@ h1, h3 {
 }
 
 .search-results {
-  background-color: #eeede6;
-}
-
-.search-results img {
-  width: 133px;
-  height: auto;
-  position: relative;
+  margin: 0 0 50px 0;
+  padding: 0;
 }
 
 .search-results a {
-  position: absolute;
   color: #fff;
-  bottom: 34pxpx;
-  font-size: 18px;
-  left: 40px;
-  font-family: Raleway, sans-serif;
   font-weight: 400;
+  /*font-size: .875em;*/
+  font-family: Raleway, sans-serif;
 }
 
-
-
-
-
-
-
-
-
+.list-style {
+  font-size: 17px;
+  list-style-type: none;
+}
 
 .my-recipes-section {
   background-color: #eeede6;

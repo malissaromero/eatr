@@ -1,18 +1,82 @@
 <section class="api-section" style="background-image: url(css/photos/cooking-background.png);">
   <div class=".container">
     <div class="row search-section">
-      <div class="col-md-4">
-        <h3><span>The</span>Word Word</h3>
-        <p>Word Word Word</p>
-        <p>Word Word Word</p>
-        <p>Word Word Word</p>
-        <p>Word Word Word</p>
-        <input type="text" ng-model="recipe.search">
-        <button type="submit" ng-click="fetchRecipes()">Submit</button>
-      </div>
+      <!-- <div class="col-md-12 search-function">
+        <h3><span>Let's</span>Search Recipes</h3>
+        <form>
+          <div class="form-group">
+            <div class="row">
+              <div class="col-xs-7">
+                <input type="text" class="form-control" ng-model="recipe.search" placeholder="Chocolate Cake">
+              </div>
+            </div>
+            <button type="submit" class="btn btn-default recipe-search-button" ng-click="fetchRecipes()">Submit</button>
+          </div>
+        </form>
+      </div> -->
     </div>
-    <!-- <input type="text" ng-model="recipe.id">
-    <button type="submit" ng-click="fetchRecipeId()">Submit</button> -->
+
+    <div class="row search-section">
+      <div class="plates">
+        <div class="col-md-4 plate-one">
+          <div class="col-md-12 search-function">
+            <h3><span>Let's</span>Search Recipes</h3>
+            <form>
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-xs-7">
+                    <input type="text" class="form-control" ng-model="recipe.search" placeholder="Chocolate Cake">
+                  </div>
+                </div>
+                <button type="submit" class="btn btn-default recipe-search-button" ng-click="fetchRecipes()">Submit</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      <div class="col-md-4 plate-two">
+        <h3><span>The</span>Results</h3>
+        <ul class="search-results">
+          <li class=list-style>
+            <a href="" ng-model="recipeId.id" ng-click="fetchRecipeId()">Hello{{details.matches[0].recipeName}}</a>
+          </li>
+          <li class=list-style>
+            <a href="">{{details.matches[1].recipeName}}</a>
+          </li>
+          <li class=list-style>
+            <a href="">{{details.matches[2].recipeName}}</a>
+          </li>
+          <li class=list-style>
+            <a href="">{{details.matches[3].recipeName}}</a>
+          </li>
+          <li class=list-style>
+            <a href="">{{details.matches[4].recipeName}}</a>
+          </li>
+          <li class=list-style>
+            <a href="">{{details.matches[5].recipeName}}</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="col-md-4 plate-three">
+        <h3><span>The</span>{{idDetails.name}}</h3>
+        <img src="{{idDetails.images[0].hostedLargeUrl}}" alt="">
+        <ul class="search-results">
+          <h4><strong>Ingredients</strong></h4>
+          <li class=list-style>{{idDetails.ingredientLines}}</li>
+        </ul>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox"> Add to My Recipes
+          </label>
+        </div>
+      </div>
+
+    </div>
+    </div>
+  </div>
+</section>
+
+
     <!-- {{idDetails}} -->
     <!-- <h1>/////</h1>
     {{idDetails.ingredientLines}}
@@ -20,14 +84,3 @@
     {{idDetails.images[0]}}
     {{idDetails.name}} -->
     <!-- {{details.matches[0].id}} -->
-    <div class="row search-results">
-      <div class="col-md-6">
-        <a href="">{{details.matches[0].recipeName}}</a>
-        <a href="">{{details.matches[1].recipeName}}</a>
-        <a href="">{{details.matches[2].recipeName}}</a>
-        <a href="">{{details.matches[3].recipeName}}</a>
-      </div>
-    </div>
-
-  </div>
-</section>
