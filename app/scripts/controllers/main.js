@@ -98,7 +98,7 @@ angular
       console.log($scope.recipe.search)
       $http.get("http://api.yummly.com/v1/api/recipes?", {
         headers : {
-          },
+        },
         params : {
           "q" : $scope.recipe.search,
           "requirePictures" : "true"}
