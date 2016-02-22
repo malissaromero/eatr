@@ -2,6 +2,7 @@
   <div class=".container">
     <div class="row search-section">
       <div class="plates">
+
         <div class="col-md-4 plate-one">
           <div class="col-md-12 search-function">
             <h3 id="search-link"><span>Let's</span>Search Recipes</h3>
@@ -18,33 +19,14 @@
             </form>
           </div>
         </div>
+
       <div class="col-md-4 plate-two">
-        <!-- <div ng-hide='plateTwoIsVisible'>
-          <h1>Your Results Here</h1>
-        </div> -->
-        <!-- <div ng-show="plateTwoIsVisible" class="show-plate-two"> -->
         <div class="show-plate-two">
         <h3><span>The</span>Results</h3>
-        <ul class="search-results">
+        <ul class="search-results" ng-repeat="result in results">
           <li ng-click=togglePlateThree() class=list-style>
-            <!-- <a href="" ng-model="recipeId.id" ng-click="fetchRecipeId()">{{details.matches[0].recipeName}}</a> -->
-            <a href="" ng-model="recipeId.id">{{details.matches[0].recipeName}}</a>
+            <a href="" ng-click="fetchRecipes(details.matches[0].id)">{{result.title}}</a>
           </li>
-          <!-- <li ng-click=togglePlateThree() class=list-style>
-            <a href="" ng-model="recipeId.id" ng-click="fetchRecipeId()">{{details.matches[1].recipeName}}</a>
-          </li>
-          <li ng-click=togglePlateThree() class=list-style>
-            <a href="" ng-model="recipeId.id" ng-click="fetchRecipeId()">{{details.matches[2].recipeName}}</a>
-          </li>
-          <li ng-click=togglePlateThree() class=list-style>
-            <a href="" ng-model="recipeId.id" ng-click="fetchRecipeId()">{{details.matches[3].recipeName}}</a>
-          </li>
-          <li ng-click=togglePlateThree() class=list-style>
-            <a href="" ng-model="recipeId.id" ng-click="fetchRecipeId()">{{details.matches[4].recipeName}}</a>
-          </li>
-          <li ng-click=togglePlateThree() class=list-style>
-            <a href="" ng-model="recipeId.id" ng-click="fetchRecipeId()">{{details.matches[5].recipeName}}</a>
-          </li> -->
         </ul>
         </div>
       </div>
@@ -56,29 +38,16 @@
         <div ng-show="plateThreeIsVisible" class="show-plate-three">
         <h3><span>The</span>{{idDetails.name}}</h3>
         <img src="{{idDetails.images[0].hostedLargeUrl}}" alt="">
-        <ul class="search-results">
-          <h4><strong>Ingredients</strong></h4>
-          <li class=list-style>{{idDetails.ingredientLines[0]}}</li>
-          <li class=list-style>{{idDetails.ingredientLines[1]}}</li>
-          <li class=list-style>{{idDetails.ingredientLines[2]}}</li>
-          <li class=list-style>{{idDetails.ingredientLines[3]}}</li>
-          <li class=list-style>{{idDetails.ingredientLines[4]}}</li>
-          <li class=list-style>{{idDetails.ingredientLines[5]}}</li>
-          <li class=list-style>{{idDetails.ingredientLines[6]}}</li>
-          <li class=list-style>{{idDetails.ingredientLines[7]}}</li>
-          <li class=list-style>{{idDetails.ingredientLines[8]}}</li>
-          <li class=list-style>{{idDetails.ingredientLines[9]}}</li>
-          <li class=list-style>{{idDetails.ingredientLines[10]}}</li>
-          <li class=list-style>{{idDetails.ingredientLines[11]}}</li>
-          <li class=list-style>{{idDetails.ingredientLines[12]}}</li>
-          <li class=list-style>{{idDetails.ingredientLines[13]}}</li>
-          <li class=list-style>{{idDetails.ingredientLines[14]}}</li>
+        <ul class="search-results" ng-repeat="line in lines">
+          <li class=list-style>{{line.ingredients}}</li>
         </ul>
-        <!-- <div class="checkbox">
+
+        <div class="checkbox">
           <label>
             <input type="checkbox"> Add to My Recipes
           </label>
-        </div> -->
+        </div>
+
         </div>
       </div>
 
