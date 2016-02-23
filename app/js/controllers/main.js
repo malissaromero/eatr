@@ -2,26 +2,26 @@
 
 angular
 .module('eatrApp')
-.controller('mainCtrl', ['$scope', '$firebase',
+.controller('mainCtrl', ['$scope', '$firebaseArray',
   function($scope, $firebaseArray) {
 
     var url = "https://eatr.firebaseio.com/recipes";
     var fireRef = new Firebase(url);
 
-    fireRef.set({
-      "recipe1": {
-        "name": "PB&J Sandwich",
-        "ingredients": "Peanut Butter, Jelly, Bread"
-      },
-      "recipe2": {
-        "name": "Macaroni and Cheese",
-        "ingredients": "Cheese, Macaroni"
-      },
-      "recipe3": {
-        "name": "Grilled Cheese",
-        "ingredients": "American Cheddar, Bread"
-      }
-    })
+    // fireRef.set({
+    //   "recipe1": {
+    //     "name": "PB&J Sandwich",
+    //     "ingredients": "Peanut Butter, Jelly, Bread"
+    //   },
+    //   "recipe2": {
+    //     "name": "Macaroni and Cheese",
+    //     "ingredients": "Cheese, Macaroni"
+    //   },
+    //   "recipe3": {
+    //     "name": "Grilled Cheese",
+    //     "ingredients": "American Cheddar, Bread"
+    //   }
+    // })
 
     $scope.recipes = $firebaseArray(fireRef);
 
@@ -44,18 +44,28 @@ angular
     $scope.createRecipe = function() {
       $scope.recipes.$add({
         name: $scope.recipe.name,
-        ingredients: $scope.recipe.ingredients,
-        calories: $scope.recipe.calories
+        ingredients: $scope.recipe.ingredients
       });
       $scope.reset()
     };
 
-    this.editRecipe = function(index) {
-      var recipe = this.recipes[index];
-        this.name = recipe.name;
-        this.ingredients = recipe.ingredients;
-        this.calories = recipe.calories;
-      recipe.$save();
+    $scope.recipes.$loaded(function() {
+      console.log("$loaded is on")
+     if ($scope.recipes.length === 0) {
+       $scope.recipes.$add({
+         name: "PB&J Sandwich",
+         ingredients: "Peanut Butter, Jelly, Bread"
+       });
+     }
+   });
+
+    $scope.updateRecipe = function(index) {
+      console.log("update is on")
+      var recipe = $scope.recipes[index];
+        $scope.name = recipe.name;
+        $scope.ingredients = recipe.ingredients;
+        $scope.calories = recipe.calories;
+      $scope.recipes.$save(recipe);
     };
 
     $scope.deleteRecipe = function(key, recipe) {
@@ -97,7 +107,7 @@ angular
         for (var i = 0; i < 10; i++) {
           var recipeName = response.data.matches[i].recipeName
           $scope.results.push({title: recipeName})
-          console.log(recipeName)
+          // console.log(recipeName)
         }
         $scope.recipeId = {
           id: $scope.details.matches[0].id
