@@ -92,7 +92,7 @@ angular
 
     $scope.fetchRecipes = function() {
       console.log($scope.recipe.search)
-      $http.get("http://api.yummly.com/v1/api/recipes?", {
+      $http.get("https://api.yummly.com/v1/api/recipes?", {
         headers : {
           },
         params : {
@@ -121,7 +121,7 @@ angular
     // }
 
     $scope.fetchRecipeId = function() {
-      $http.get("http://api.yummly.com/v1/api/recipe/" + $scope.recipeId.id, {
+      $http.get("https://api.yummly.com/v1/api/recipe/" + $scope.recipeId.id, {
         headers : {
           }
         })
