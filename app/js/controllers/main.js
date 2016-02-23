@@ -121,7 +121,7 @@ angular
           for (var i = 0; i < 100; i++) {
             var recipeIngredients = response.data.ingredientLines[i]
             $scope.lines.push({ingredients: recipeIngredients})
-            console.log(recipeIngredients)
+            // console.log(recipeIngredients)
           }
         });
       };
