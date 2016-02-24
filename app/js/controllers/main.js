@@ -8,21 +8,6 @@ angular
     var url = "https://eatr.firebaseio.com/recipes";
     var fireRef = new Firebase(url);
 
-    // fireRef.set({
-    //   "recipe1": {
-    //     "name": "PB&J Sandwich",
-    //     "ingredients": "Peanut Butter, Jelly, Bread"
-    //   },
-    //   "recipe2": {
-    //     "name": "Macaroni and Cheese",
-    //     "ingredients": "Cheese, Macaroni"
-    //   },
-    //   "recipe3": {
-    //     "name": "Grilled Cheese",
-    //     "ingredients": "American Cheddar, Bread"
-    //   }
-    // })
-
     $scope.recipes = $firebaseArray(fireRef);
 
     $scope.formIsVisible = false
@@ -115,10 +100,6 @@ angular
         $scope.fetchRecipeId()
       });
     };
-
-    // $scope.recipeId = {
-    //   id: 'Bourbon-Burger-1303425'
-    // }
 
     $scope.fetchRecipeId = function() {
       $http.get("https://api.yummly.com/v1/api/recipe/" + $scope.recipeId.id, {
