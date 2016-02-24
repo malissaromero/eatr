@@ -41,7 +41,7 @@ angular
     console.log("were at fetch recipes")
   $http.get("https://api.yummly.com/v1/api/recipes?", {
     headers : {
-    },
+      },
     params : {
       "q" : $scope.recipe.search,
       "requirePictures" : "true"}

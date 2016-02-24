@@ -21,7 +21,7 @@ angular
 .controller('mainCtrl', function($scope, $firebaseArray, recipeAdder, $rootScope) {
 
   var firebaseUrl = "https://eatr.firebaseio.com/recipes";
-  var wantToRecipe = new Firebase(firebaseUrl   "/recipes/wantToRecipe");
+  var wantToRecipe = new Firebase(firebaseUrl + "/recipes/wantToRecipe")
 
   var wantArray = $firebaseArray(wantToRecipe);
 
