@@ -1,34 +1,24 @@
- // angular
-  //   .module('bookmark')
-  //   .controller('mainController', function($firebaseArray, BookAdder, $rootScope) {
-  //     var vm = this;
-  //
-  //     var wantToRead = new Firebase(firebaseURL   "/books/wantToRead");
-  //
-      // var wantArray = $firebaseArray(wantToRead);
-  //
-  //     vm.wantToRead = wantArray
-  //
-  //     $rootScope.$on('wantToRead', function() {
-  //       vm.wantToRead.$add( BookAdder.get() )
-  //     })
-  //
-  //   })
-  //
-  // })
 angular
 .module('eatrApp')
 .controller('mainCtrl', function($scope, $firebaseArray, recipeAdder, $rootScope) {
 
-  var firebaseUrl = "https://eatr.firebaseio.com/recipes";
-  var wantToRecipe = new Firebase(firebaseUrl + "/recipes/wantToRecipe")
+  var firebaseUrl = "https://eatr.firebaseio.com";
+  var recipeUrl = new Firebase(firebaseUrl + "/recipes")
 
-  var wantArray = $firebaseArray(wantToRecipe);
+  $scope.recipes = $firebaseArray(recipeUrl);
 
-  $scope.wantToRecipe = wantArray
+  $rootScope.$on('addToRecipes', function() {
+    $scope.addToRecipes.$add( recipeAdder.get() )
+  });
 
-  $rootScope.$on('wantToRecipe', function() {
-    $scope.wantToRecipe.$add( recipeAdder.get() )
+  $scope.recipes.$loaded(function() {
+    console.log("$loaded is on")
+    if ($scope.recipes.length === 0) {
+      $scope.recipe.$add({
+        name: "PB&J Sandwich",
+        ingredients: "Peanut Butter, Jelly, Bread"
+      });
+    }
   });
 
 })
