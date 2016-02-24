@@ -1,17 +1,43 @@
+<!-- <div ng-repeat="book in vm.wantToRead">
+  <div class="book-container">
+    <p><strong>{{book.title}}</strong> <br>—{{book.author}}</p>
+  </div>
+</div> -->
+
 <section class="my-recipes-section">
   <div class=".container">
-    <!-- <div class="row">
-      <div class="col-md-12">
-        <h2>My Recipes</h2>
-      </div>
-    </div> -->
 
   <div class="row">
     <div class="col-md-12 my-recipes-headers">
     <h3 id="my-recipes-link">My Recipes</h3>
     <p>If you have a unique recipe or just could not find the recipe you were looking for, feel free to add to your recipes.</p>
 
-    <!-- create functionality -->
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12 my-recipes-list">
+    <div class="recipes" ng-repeat="(key, recipe) in wantToRecipe" ng-class="{'editing-recipe': editRecipe}">
+      <div class="items" ng-show="!editRecipe">
+        <label ng-show="!editRecipe">{{recipe.name}}</label>
+      </div>
+
+
+    </div>
+    </div>
+  </div>
+
+  </div>
+</section>
+
+<!-- <section class="my-recipes-section">
+  <div class=".container">
+
+  <div class="row">
+    <div class="col-md-12 my-recipes-headers">
+    <h3 id="my-recipes-link">My Recipes</h3>
+    <p>If you have a unique recipe or just could not find the recipe you were looking for, feel free to add to your recipes.</p>
+
     <a href="" class="add-recipe" ng-click="toggleForm()">+ Add a New Recipe</a>
 
     <form ng-show="formIsVisible" ng-submit=createRecipe();>
@@ -25,11 +51,6 @@
         <input type="text" name="ingredients" ng-model="recipe.ingredients">
       </div>
 
-      <!-- <div>
-        <label>Calories</label>
-        <input type="text" name="calories" ng-model="recipe.calories">
-      </div> -->
-
       <button type="submit">Submit</button>
     </form>
     </div>
@@ -37,23 +58,18 @@
 
   <div class="row">
     <div class="col-md-12 my-recipes-list">
-    <!-- edit, update and delete functionality -->
+
     <div class="recipes" ng-repeat="(key, recipe) in recipes" ng-class="{'editing-recipe': editRecipe}">
-      <!-- show data -->
+
       <div class="items" ng-show="!editRecipe">
         <label ng-show="!editRecipe">{{recipe.name}}</label>
-        <!-- <label ng-show="!editRecipe">{{recipe.ingredients}}</label>
-        <label ng-show="!editRecipe">{{recipe.calories}}</label> -->
       </div>
 
-      <!-- form for editing -->
       <form ng-show="editRecipe">
         <input type="text" ng-model="recipe.name">
         <input type="text" ng-model="recipe.ingredients">
-        <!-- <input type="text" ng-model="recipe.calories"> -->
       </form>
 
-      <!-- edit, save and delete buttons -->
       <div class="actions">
         <a href="" class="edit" ng-click="editRecipe = !editRecipe">Edit</a>
         <a href="" class="save" ng-click="updateRecipe($index); editRecipe = !editRecipe">Save</a>
@@ -64,4 +80,4 @@
   </div>
 
   </div>
-</section>
+</section> -->

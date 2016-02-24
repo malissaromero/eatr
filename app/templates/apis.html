@@ -1,3 +1,19 @@
+<!-- <div class="search-column" ng-controller="searchController as vm">
+    <h2>Search for Books!</h2>
+    <form ng-submit="vm.search(vm.searchTerm)">
+      <input class="search-form" ng-model="vm.searchTerm"></input>
+      <input type="submit" value="submit">
+    </form>
+    <div class="search-results">
+      <div ng-repeat="result in vm.searchResults">
+        <div class="book-container">
+          <p><strong>{{result.title}}</strong> <br>—{{result.author}}</p>
+        </div>
+        <button ng-click="vm.wantToRead(result)">Want to Read</button>
+      </div>
+    </div>
+  </div> -->
+
 <section class="api-section" style="background-image: url(css/photos/cooking-background.png);">
   <div class=".container">
     <div class="row search-section">
@@ -13,7 +29,47 @@
                     <input type="text" class="form-control" ng-model="recipe.search" placeholder="Chocolate Cake">
                   </div>
                 </div>
-                <!-- <button type="submit" class="btn btn-default recipe-search-button" ng-click=togglePlateTwo()>Submit</button> -->
+                <button type="submit" class="btn btn-default recipe-search-button">Submit</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+      <div class="col-md-4 plate-two">
+        <div class="show-plate-two">
+        <h3><span>The</span>Results</h3>
+        <ul class="search-results" ng-repeat="result in searchResults">
+          <li ng-click=togglePlateThree() class=list-style>
+            <a href="">{{result.name}}</a>
+          </li>
+          <button ng-click="wantToRecipe(result)">Add to Recipes</button>
+        </ul>
+        </div>
+      </div>
+
+    </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- <section class="api-section" style="background-image: url(css/photos/cooking-background.png);">
+  <div class=".container">
+    <div class="row search-section">
+      <div class="plates">
+
+        <div class="col-md-4 plate-one">
+          <div class="col-md-12 search-function">
+            <h3 id="search-link"><span>Let's</span>Search Recipes</h3>
+            <form ng-submit=fetchRecipes();>
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-xs-7">
+                    <input type="text" class="form-control" ng-model="recipe.search" placeholder="Chocolate Cake">
+                  </div>
+                </div>
                 <button type="submit" class="btn btn-default recipe-search-button">Submit</button>
               </div>
             </form>
@@ -54,4 +110,4 @@
     </div>
     </div>
   </div>
-</section>
+</section> -->
