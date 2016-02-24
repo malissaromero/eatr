@@ -38,24 +38,31 @@ angular
   }
 
   $scope.fetchRecipes = function() {
-    console.log("were at fetch recipes")
-  $http.get("https://api.yummly.com/v1/api/recipes?", {
-    headers : {
-      },
-    params : {
-      "q" : $scope.recipe.search,
-      "requirePictures" : "true"}
-  })
-  .then(function(response) {
-    $scope.details = response.data;
+      console.log($scope.recipe.search)
+      $http.get("https://api.yummly.com/v1/api/recipes?", {
+        headers : {
+          "X-Yummly-App-ID" : "fff5495f",
+      "X-Yummly-App-Key" : "e58fc1567bc839f3c927850b195a954c"},
+        params : {
+          "q" : $scope.recipe.search,
+          "requirePictures" : "true"}
+      })
+      .then(function(response) {
+        $scope.details = response.data;
 
-    $scope.searchResults = [];
-    for (var i = 0; i < 10; i  ) {
-      var recipeName = response.data.matches[i].recipeName
-      $scope.searchResults.push({name: recipeName})
-    }
-  });
-  };
+        $scope.results = [];
+        $scope.details = response.data;
+        for (var i = 0; i < 10; i  ) {
+          var recipeName = response.data.matches[i].recipeName
+          $scope.results.push({title: recipeName})
+          // console.log(recipeName)
+        }
+        $scope.recipeId = {
+          id: $scope.details.matches[0].id
+        }
+        $scope.fetchRecipeId()
+      });
+    };
 
   $scope.wantToRecipe = function(result) {
     $scope.searchResults = [];
