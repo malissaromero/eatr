@@ -11,7 +11,8 @@ angular
   $scope.fetchRecipes = function() {
     $http.get("https://api.yummly.com/v1/api/recipes?", {
       headers : {
-        },
+        "X-Yummly-App-ID" : "fff5495f",
+      "X-Yummly-App-Key" : "e58fc1567bc839f3c927850b195a954c"},
       params : {
         "q" : $scope.recipe.search,
         "requirePictures" : "true"}

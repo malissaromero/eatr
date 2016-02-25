@@ -14,7 +14,7 @@ angular
   $scope.recipes.$loaded(function() {
     console.log("$loaded is on")
     if ($scope.recipes.length === 0) {
-      $scope.recipe.$add({
+      $scope.recipes.$add({
         name: "PB&J Sandwich",
         ingredients: "Peanut Butter, Jelly, Bread"
       });
