@@ -23,13 +23,14 @@ angular
     $scope.reset = function() {
       $scope.recipe.name = "";
       $scope.recipe.ingredients = "";
-      $scope.recipe.calories = "";
+      $scope.recipe.directions = "";
     };
 
     $scope.createRecipe = function() {
       $scope.recipes.$add({
         name: $scope.recipe.name,
-        ingredients: $scope.recipe.ingredients
+        ingredients: $scope.recipe.ingredients,
+        directions: $scope.recipe.directions
       });
       $scope.reset()
     };
@@ -39,7 +40,8 @@ angular
      if ($scope.recipes.length === 0) {
        $scope.recipes.$add({
          name: "PB&J Sandwich",
-         ingredients: "Peanut Butter, Jelly, Bread"
+         ingredients: "Peanut Butter, Jelly, Bread",
+         directions: "Put Peanut Butter and Jelly on Bread"
        });
      }
    });
@@ -49,7 +51,7 @@ angular
       var recipe = $scope.recipes[index];
         $scope.name = recipe.name;
         $scope.ingredients = recipe.ingredients;
-        $scope.calories = recipe.calories;
+        $scope.directions = recipe.directions;
       $scope.recipes.$save(recipe);
     };
 

@@ -369,3 +369,7 @@ h1, h3 {
   font-weight: 300;
   color: #f39c12;
 }
+
+@media all and (max-width: 1079px) {
+
+}

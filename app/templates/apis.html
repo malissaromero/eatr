@@ -38,6 +38,7 @@
         <div ng-show="plateThreeIsVisible" class="show-plate-three">
         <h3><span>The</span>{{idDetails.name}}</h3>
         <img src="{{idDetails.images[0].hostedLargeUrl}}" alt="">
+        <a href="{{idDetails.source.sourceRecipeUrl}}">Directions</a>
         <ul class="search-results" ng-repeat="line in lines">
           <li class=list-style>{{line.ingredients}}</li>
         </ul>
