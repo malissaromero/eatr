@@ -1,3 +1,5 @@
+'use strict';
+
 angular
 .module('eatrApp')
 .controller('mainCtrl', function($scope, $firebaseArray, recipeAdder, $rootScope) {
@@ -17,6 +19,7 @@ angular
       $scope.recipes.$add({
         name: "PB&J Sandwich",
         ingredients: "Peanut Butter, Jelly, Bread"
+        directions: "Put PB and Jelly on Bread."
       });
     }
   });

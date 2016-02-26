@@ -1,18 +1,28 @@
+'use strict';
+
 angular
 .module('eatrApp')
-.controller('apiCtrl', function($scope, $http, recipeAdder) {
+.controller('apiCtrl', function($scope, $http) {
 
-  $scope.searchResults = [];
+  $scope.plateThreeIsVisible = false
+  $scope.togglePlateThree = function() {
+    if($scope.plateThreeIsVisible) {
+      $scope.plateThreeIsVisible = false
+    }
+    else {
+      $scope.plateThreeIsVisible = true
+    }
+  };
 
   $scope.recipe = {
-        search: ''
-      }
+    search: ''
+  }
 
   $scope.fetchRecipes = function() {
+    console.log($scope.recipe.search)
     $http.get("https://api.yummly.com/v1/api/recipes?", {
       headers : {
-        "X-Yummly-App-ID" : "fff5495f",
-      "X-Yummly-App-Key" : "e58fc1567bc839f3c927850b195a954c"},
+        },
       params : {
         "q" : $scope.recipe.search,
         "requirePictures" : "true"}

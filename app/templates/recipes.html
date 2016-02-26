@@ -1,5 +1,5 @@
 <section class="my-recipes-section">
-  <div class=".container">
+  <div class=".container-fluid">
 
   <div class="row">
     <div class="col-md-12 my-recipes-headers">
@@ -25,30 +25,31 @@
 </section>
 
 <!-- <section class="my-recipes-section">
-  <div class=".container">
+  <div class=".container-fluid">
 
   <div class="row">
     <div class="col-md-12 my-recipes-headers">
     <h3 id="my-recipes-link">My Recipes</h3>
     <p>If you have a unique recipe or just could not find the recipe you were looking for, feel free to add to your recipes.</p>
 
+
     <a href="" class="add-recipe" ng-click="toggleForm()">+ Add a New Recipe</a>
 
     <form ng-show="formIsVisible" ng-submit=createRecipe();>
-      <div>
+      <div class="form-group">
         <label>Name</label>
-        <input type="text" name="name" ng-model="recipe.name">
+        <input type="text" class="form-control" placeholder="Macaroni & Cheese" name="name" ng-model="recipe.name">
       </div>
-
-      <div>
+      <div class="form-group">
         <label>Ingredients</label>
-        <input type="text" name="ingredients" ng-model="recipe.ingredients">
+        <input type="text" class="form-control" placeholder="Macaroni Pasta, Cheese" name="ingredients" ng-model="recipe.ingredients">
       </div>
-
-      <button type="submit">Submit</button>
+      <div class="form-group">
+        <label>Directions</label>
+        <input type="text" class="form-control" placeholder="Text Input" name="directions" ng-model="recipe.directions">
+      </div>
+      <button type="submit" class="btn btn-default">Submit</button>
     </form>
-    </div>
-  </div>
 
   <div class="row">
     <div class="col-md-12 my-recipes-list">
@@ -59,15 +60,34 @@
         <label ng-show="!editRecipe">{{recipe.name}}</label>
       </div>
 
-      <form ng-show="editRecipe">
-        <input type="text" ng-model="recipe.name">
-        <input type="text" ng-model="recipe.ingredients">
+
+      <form class="form-horizontal" ng-show="editRecipe">
+        <div class="form-group">
+          <label class="col-sm-2 control-label">Name</label>
+          <div class="col-sm-6">
+            <input type="text" class="form-control" ng-model="recipe.name">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-2 control-label">Ingredients</label>
+          <div class="col-sm-6">
+            <input type="text" class="form-control" ng-model="recipe.ingredients">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-2 control-label">Directions</label>
+          <div class="col-sm-6">
+            <input type="text" class="form-control" ng-model="recipe.directions">
+          </div>
+        </div>
+        <div class="actions">
+          <a href="" class="save" ng-click="updateRecipe($index); editRecipe = !editRecipe">Save</a>
+          <a href="" class="delete" ng-click="deleteRecipe(key)">Delete</a>
+        </div>
       </form>
 
-      <div class="actions">
+      <div class="actions" ng-show="!editRecipe">
         <a href="" class="edit" ng-click="editRecipe = !editRecipe">Edit</a>
-        <a href="" class="save" ng-click="updateRecipe($index); editRecipe = !editRecipe">Save</a>
-        <a href="" class="delete" ng-click="deleteRecipe(key)">Delete</a>
       </div>
     </div>
     </div>
