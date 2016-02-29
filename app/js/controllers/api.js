@@ -34,7 +34,6 @@ angular
       for (var i = 0; i < 10; i++) {
         var recipeName = response.data.matches[i].recipeName
         $scope.results.push({title: recipeName})
-        // console.log(recipeName)
       }
       $scope.recipeId = {
         id: $scope.details.matches[0].id
@@ -54,7 +53,6 @@ angular
         for (var i = 0; i < 100; i++) {
           var recipeIngredients = response.data.ingredientLines[i]
           $scope.lines.push({ingredients: recipeIngredients})
-          // console.log(recipeIngredients)
         }
       });
     };
