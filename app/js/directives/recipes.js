@@ -1,13 +1,13 @@
 angular.module('eatrApp')
-.directive('recipes', function() {
+.directive('recipe', function() {
   return {
-    templateUrl: 'templates/recipes.html',
-    controller: 'mainCtrl'
+    templateUrl: 'templates/recipe.html',
+    controller: 'recipeCtrl'
   }
 })
-.directive('apis', function() {
+.directive('api', function() {
   return {
-    templateUrl: 'templates/apis.html',
+    templateUrl: 'templates/api.html',
     controller: 'apiCtrl'
   }
 })

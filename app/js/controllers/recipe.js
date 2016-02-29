@@ -2,7 +2,7 @@
 
 angular
 .module('eatrApp')
-.controller('mainCtrl', ['$scope', '$firebaseArray',
+.controller('recipeCtrl', ['$scope', '$firebaseArray',
   function($scope, $firebaseArray) {
 
     var url = "https://eatr.firebaseio.com/recipes";
