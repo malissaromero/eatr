@@ -18,7 +18,7 @@ angular
     search: ''
   }
 
-  $scope.fetchRecipes = function() {
+  $scope.searchRecipes = function() {
     console.log($scope.recipe.search)
     $http.get("https://api.yummly.com/v1/api/recipes?", {
       headers : {
@@ -35,14 +35,18 @@ angular
         var recipeName = response.data.matches[i].recipeName
         $scope.results.push({title: recipeName})
       }
-      $scope.recipeId = {
-        id: $scope.details.matches[0].id
-      }
-      $scope.fetchRecipeId()
+      // $scope.recipeId = {
+      //   id: $scope.details.matches[0].id
+      // }
+      // $scope.fetchRecipeId()
     });
   };
 
-  $scope.fetchRecipeId = function() {
+  $scope.recipeId = {
+    id: ''
+  }
+
+  $scope.fetchRecipeDetails = function() {
     $http.get("https://api.yummly.com/v1/api/recipe/" + $scope.recipeId.id, {
       headers : {
         }
