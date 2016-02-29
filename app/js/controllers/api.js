@@ -18,11 +18,12 @@ angular
     search: ''
   }
 
-  $scope.fetchRecipes = function() {
+  $scope.searchRecipes = function() {
     console.log($scope.recipe.search)
     $http.get("https://api.yummly.com/v1/api/recipes?", {
       headers : {
-        },
+        "X-Yummly-App-ID" : "fff5495f",
+        "X-Yummly-App-Key" : "e58fc1567bc839f3c927850b195a954c"},
       params : {
         "q" : $scope.recipe.search,
         "requirePictures" : "true"}
@@ -35,17 +36,22 @@ angular
         var recipeName = response.data.matches[i].recipeName
         $scope.results.push({title: recipeName})
       }
-      $scope.recipeId = {
-        id: $scope.details.matches[0].id
-      }
-      $scope.fetchRecipeId()
+      // $scope.recipeId = {
+      //   id: $scope.details.matches[0].id
+      // }
+      // $scope.fetchRecipeId()
     });
   };
 
-  $scope.fetchRecipeId = function() {
+  $scope.recipeId = {
+    id: ''
+  }
+
+  $scope.fetchRecipeDetails = function() {
     $http.get("https://api.yummly.com/v1/api/recipe/" + $scope.recipeId.id, {
       headers : {
-        }
+        "X-Yummly-App-ID" : "fff5495f",
+        "X-Yummly-App-Key" : "e58fc1567bc839f3c927850b195a954c"}
       })
       .then(function(response) {
         $scope.lines = [];
