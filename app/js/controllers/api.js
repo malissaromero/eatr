@@ -30,7 +30,7 @@ angular
   $scope.addToRecipes = function(result) {
     console.log("add to recipes click event working")
     $scope.searchResults = [];
-    recipeAdder.set(result, "addToRecipes")
+    recipeAdder.set(result, "setRecipes")
   };
 }])
 

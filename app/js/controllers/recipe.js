@@ -10,7 +10,7 @@ angular
   $scope.recipes = $firebaseArray(recipeUrl);
 
   $rootScope.$on('addToRecipes', function() {
-    $scope.addToRecipes.$add( recipeAdder.get() )
+    $scope.setRecipes.$add( recipeAdder.get() )
   });
 
   $scope.recipes.$loaded(function() {
