@@ -419,9 +419,9 @@ h1, h3 {
 }
 
 @media screen and (max-width: 1250px) {
-  * {
+  /** {
   background-color: red;
-  }
+  }*/
 
   .jumbotron {
     margin-left: 0px;
@@ -429,9 +429,9 @@ h1, h3 {
 }
 
 @media screen and (max-width: 820px) {
-  * {
+  /** {
   background-color: blue;
-  }
+  }*/
 
   .jumbotron {
     margin-left: 0px;

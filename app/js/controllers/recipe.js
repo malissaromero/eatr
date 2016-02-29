@@ -2,7 +2,7 @@
 
 angular
 .module('eatrApp')
-.controller('mainCtrl', function($scope, $firebaseArray, recipeAdder, $rootScope) {
+.controller('recipeCtrl', ['$scope', '$firebaseArray', 'recipeAdder', '$rootScope', function($scope, $firebaseArray, recipeAdder, $rootScope) {
 
   var firebaseUrl = "https://eatr.firebaseio.com";
   var recipeUrl = new Firebase(firebaseUrl + "/recipes")
@@ -18,13 +18,13 @@ angular
     if ($scope.recipes.length === 0) {
       $scope.recipes.$add({
         name: "PB&J Sandwich",
-        ingredients: "Peanut Butter, Jelly, Bread"
+        ingredients: "Peanut Butter, Jelly, Bread",
         directions: "Put PB and Jelly on Bread."
       });
     }
   });
 
-})
+}])
 
 // 'use strict';
 //
@@ -48,19 +48,20 @@ angular
 //       }
 //     };
 //
-//     $scope.reset = function() {
-//       $scope.recipe.name = "";
-//       $scope.recipe.ingredients = "";
-//       $scope.recipe.calories = "";
-//     };
-//
-//     $scope.createRecipe = function() {
-//       $scope.recipes.$add({
-//         name: $scope.recipe.name,
-//         ingredients: $scope.recipe.ingredients
-//       });
-//       $scope.reset()
-//     };
+    // $scope.reset = function() {
+    //   $scope.recipe.name = "";
+    //   $scope.recipe.ingredients = "";
+    //   $scope.recipe.directions = "";
+    // };
+    //
+    // $scope.createRecipe = function() {
+    //   $scope.recipes.$add({
+    //     name: $scope.recipe.name,
+    //     ingredients: $scope.recipe.ingredients,
+          // directions: $scope.recipe.directions
+    //   });
+    //   $scope.reset()
+    // };
 //
 //     $scope.recipes.$loaded(function() {
 //       console.log("$loaded is on")

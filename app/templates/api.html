@@ -24,9 +24,9 @@
         <h3><span>The</span>Results</h3>
         <ul class="search-results" ng-repeat="result in searchResults">
           <li ng-click=togglePlateThree() class=list-style>
-            <a href="">{{result.title}}</a>
+            <a href="">{{result.name}}</a>
           </li>
-          <button ng-click="addToRecipes(result)">Add to Recipes</button>
+          <button ng-click="addToRecipes()">Add to Recipes</button>
         </ul>
         </div>
       </div>

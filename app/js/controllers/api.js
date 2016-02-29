@@ -1,25 +1,14 @@
-'use strict';
-
 angular
 .module('eatrApp')
-.controller('apiCtrl', function($scope, $http) {
+.controller('apiCtrl', ['$scope', '$http', 'recipeAdder', '$rootScope', function($scope, $http, recipeAdder, $rootScope) {
 
-  $scope.plateThreeIsVisible = false
-  $scope.togglePlateThree = function() {
-    if($scope.plateThreeIsVisible) {
-      $scope.plateThreeIsVisible = false
-    }
-    else {
-      $scope.plateThreeIsVisible = true
-    }
-  };
+  $scope.searchResults = [];
 
   $scope.recipe = {
-    search: ''
-  }
+        search: ''
+      }
 
   $scope.fetchRecipes = function() {
-    console.log($scope.recipe.search)
     $http.get("https://api.yummly.com/v1/api/recipes?", {
       headers : {
         },
@@ -33,7 +22,7 @@ angular
       $scope.searchResults = [];
       for (var i = 0; i < 10; i++) {
         var recipeName = response.data.matches[i].recipeName
-        $scope.searchResults.push({title: recipeName})
+        $scope.searchResults.push({name: recipeName})
       }
     });
   };
@@ -42,9 +31,8 @@ angular
     console.log("add to recipes click event working")
     $scope.searchResults = [];
     recipeAdder.set(result, "addToRecipes")
-  }
-
-})
+  };
+}])
 
 //   .controller('apiCtrl', function($scope, $http) {
 //

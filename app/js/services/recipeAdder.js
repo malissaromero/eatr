@@ -1,7 +1,8 @@
 angular
 .module('eatrApp')
-.service('recipeAdder', function($rootScope) {
+.service('recipeAdder', ["$rootScope", function($rootScope) {
   this.selectedRecipe = "";
+
   return {
     get: function() {
       return this.selectedRecipe;
@@ -15,4 +16,4 @@ angular
       }
     }
   }
-})
+}]);
