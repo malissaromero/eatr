@@ -264,6 +264,15 @@ h1, h3 {
   list-style-type: none;
 }
 
+.directions-link {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 400;
+  font-family: Raleway, sans-serif;
+  line-height: 3.428571;
+  font-size: 17px;
+}
+
 .my-recipes-section {
   background-color: #eeede6;
   font-family: Raleway, sans-serif;

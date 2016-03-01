@@ -38,7 +38,7 @@ angular
       $scope.recipeId = {
         id: $scope.details.matches[0].id
       }
-      $scope.fetchRecipeId()
+      $scope.fetchRecipeDetails()
     });
   };
 
