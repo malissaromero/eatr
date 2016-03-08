@@ -1,4 +1,4 @@
-<section class="api-section" style="background-image: url(css/photos/cooking-background.png);">
+<!-- <section class="api-section" style="background-image: url(css/photos/cooking-background.png);">
   <div class=".container-fluid">
     <div class="row search-section">
       <div class="plates">
@@ -20,9 +20,9 @@
         </div>
 
       <div class="col-md-4 plate-two">
-        <!-- <div class="show-plate-two"> -->
+
         <h3><span>The</span>Results</h3>
-        <ul class="search-results" ng-repeat="result in searchResults">
+        <ul class="search-results" ng-repeat="recipe in recipes">
           <li ng-click=togglePlateThree() class=list-style>
             <a href="">{{result.name}}</a>
           </li>
@@ -34,12 +34,12 @@
     </div>
     </div>
   </div>
-</section>
+</section> -->
 
 
 
 
-<!-- <section class="api-section" style="background-image: url(css/photos/cooking-background.png);">
+<section class="api-section" style="background-image: url(css/photos/cooking-background.png);">
   <div class=".container">
     <div class="row search-section">
       <div class="plates">
@@ -65,7 +65,7 @@
         <h3><span>The</span>Results</h3>
         <ul class="search-results" ng-repeat="result in results">
           <li ng-click=togglePlateThree() class=list-style>
-            <a href="">{{result.title}}</a>
+            <a href="" ng-click="fetchRecipeId()">{{result.name}}</a>
           </li>
         </ul>
         </div>
@@ -86,6 +86,7 @@
         <div class="checkbox">
           <label>
             <input type="checkbox"> Add to My Recipes
+            <button ng-click="addToMyRecipes(result)">Add to Recipes</button>
           </label>
         </div>
 
@@ -95,4 +96,4 @@
     </div>
     </div>
   </div>
-</section> -->
+</section>
