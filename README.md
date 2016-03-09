@@ -12,7 +12,7 @@ Eatr is an application that allows allows the user to search recipes from an API
  - Yummly API
 
 ##Challenges
- - Stack Overflow Questions
+Stack Overflow Questions
  1. http://stackoverflow.com/questions/35709940/issue-with-angular-services-with-broadcast-and-on
  2. http://stackoverflow.com/questions/35711048/issue-with-grabbing-a-flexible-id-from-get-request-and-pass-data-to-controller-i
 
