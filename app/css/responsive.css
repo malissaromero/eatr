@@ -1,7 +1,7 @@
 @media screen and (max-width: 480px) {
- * {
+ /** {
    background-color: blue;
-   }
+   }*/
 }
 
 @media screen and (min-width: 660px ) {
