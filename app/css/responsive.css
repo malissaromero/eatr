@@ -4,10 +4,46 @@
    }*/
 }
 
-@media screen and (min-width: 660px ) {
+@media screen and (max-width: 991px ) {
+  .brand-name {
+  float: left;
+  width: 30%
+  }
 
-}
+  .nav-link {
+    float: right;
+    text-align: right;
+    width: 65%;
+  }
 
-@media screen and (min-width: ) {
+  .picture-one {
+    position: absolute;
+    top: 2%;
+  }
 
+  .plate-one {
+    height: 50%;
+  }
+
+  .plate-two {
+    margin-top: -20px;
+    height: 50%;
+  }
+
+  .plate-three {
+    margin-top: -20px;
+    height: 50%;
+  }
+
+  .plate-one span {
+    padding: 10px 0 0 0;
+  }
+
+  .plate-two span {
+    padding: 10px 0 0 0;
+  }
+
+  .plate-three span {
+    padding: 10px 0 0 0;
+  }
 }

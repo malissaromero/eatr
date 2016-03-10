@@ -24,7 +24,7 @@
         <h3><span>The</span>Results</h3>
         <ul class="search-results" ng-repeat="result in results">
           <li ng-click=togglePlateThree() class=list-style>
-            <a href="" ng-click="fetchRecipeDetails(details.matches[0].id)">{{result.title}}</a>
+            <a href="" data-recipe-id="{{result.id}}" ng-click="fetchRecipeDetails($event)">{{result.title}}</a>
           </li>
         </ul>
         </div>
