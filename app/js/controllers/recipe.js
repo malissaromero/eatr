@@ -12,7 +12,7 @@ angular
 
     $scope.formIsVisible = false
     $scope.toggleForm = function() {
-      if($scope.formIsVisible) {
+      if( $scope.formIsVisible ) {
         $scope.formIsVisible = false
       }
       else {
@@ -37,7 +37,7 @@ angular
 
     $scope.recipes.$loaded(function() {
       console.log("$loaded is on")
-     if ($scope.recipes.length === 0) {
+     if ( $scope.recipes.length === 0 ) {
        $scope.recipes.$add({
          name: "PB&J Sandwich",
          ingredients: "Peanut Butter, Jelly, Bread",
@@ -46,8 +46,7 @@ angular
      }
    });
 
-    $scope.updateRecipe = function(index) {
-      console.log("update is on")
+    $scope.updateRecipe = function( index ) {
       var recipe = $scope.recipes[index];
         $scope.name = recipe.name;
         $scope.ingredients = recipe.ingredients;
@@ -55,7 +54,7 @@ angular
       $scope.recipes.$save(recipe);
     };
 
-    $scope.deleteRecipe = function(key, recipe) {
+    $scope.deleteRecipe = function( key, recipe ) {
       $scope.recipes.$remove(key);
     };
 
