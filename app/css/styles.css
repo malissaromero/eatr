@@ -45,6 +45,11 @@ a:active {
   margin-top: -5px;
 }
 
+.main-picture {
+  background-image: url(photos/dinner2.jpg);
+  background-size: cover;
+}
+
 .nav-link li {
   display: inline;
 }
@@ -200,6 +205,8 @@ h1, h3 {
   padding-bottom: 60px;
   background-repeat: no-repeat;
   padding: 7rem 5%;
+  background-image: url(photos/cooking-background.png);
+  background-size: cover;
 }
 
 .search-function {
