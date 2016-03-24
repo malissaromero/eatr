@@ -1,5 +1,9 @@
-$(document).ready(function () {
-  console.log("js is ready")
+$(document).ready(function(){
 
-
+  $('a').click(function(){
+      $('html, body').animate({
+          scrollTop: $( $(this).attr('href') ).offset().top
+      }, 500);
+      return false;
+  });
 });

@@ -212,7 +212,7 @@ h1, h3 {
 }*/
 
 .search-function input {
-  margin: 0 0 15px 77px;
+  margin: 0 40% 15px 40%;
 }
 
 .recipe-search-button {
@@ -299,6 +299,14 @@ h1, h3 {
   font-family: Raleway, sans-serif;
   line-height: 3.428571;
   font-size: 17px;
+  display: block;
+}
+
+h4 {
+  color: #fff;
+  font-weight: 400;
+  /*font-size: .875em;*/
+  font-family: Raleway, sans-serif;
 }
 
 /*******************************************************************

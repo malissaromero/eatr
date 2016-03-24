@@ -48,7 +48,7 @@ angular
   // we then grab the id inside the $event and pass it to the id variable
 
   //the id variable needs to be written this way because data-recipe-id is a revolving array and you put it in quotes because it is a name you can pass as a string
-    console.log($event)
+    // console.log($event)
 
     var id = $event.currentTarget.attributes["data-recipe-id"].value
 
