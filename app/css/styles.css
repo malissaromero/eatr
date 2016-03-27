@@ -1,5 +1,3 @@
-@import url(https://fonts.googleapis.com/css?family=Grand+Hotel);
-
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,600,300,700);
 
 /*******************************************************************
@@ -37,12 +35,17 @@ a:active {
 /*******************************************************************
  NAVIGATION SECTION
 *******************************************************************/
+.logo {
+  display: inline;
+}
+
 .brand-name {
-  font-family: 'Grand Hotel', serif;
+  font-family: 'Raleway', serif;
   font-size: 70px;
-  margin-left: 70px;
+  margin-left: 10%;
   color: #fff;
   margin-top: -5px;
+  display: inline
 }
 
 .main-picture {
@@ -50,24 +53,25 @@ a:active {
   background-size: cover;
 }
 
+.nav-link {
+  text-align: right;
+  display: inline
+}
+
 .nav-link li {
   display: inline;
+  margin: 20px 5% 0 0;
 }
 
 .nav-button {
-  font-family: Raleway, sans-serif;
-  font-size: 12px;
+  font-family: 'Raleway', sans-serif;
+  /*font-size: 12px;*/
   text-transform: uppercase;
   cursor: pointer;
-  padding: 0 2rem;
+  /*padding: 0 2rem;*/
   color: #fff;
-  line-height: 6;
+  /*line-height: 6;*/
   font-weight: 600;
-  transition: all 0.3s ease-in-out;
-}
-
-.transparent {
-  color: transparent;
 }
 
 a.nav-button:link {
@@ -86,10 +90,70 @@ a.nav-button:active {
   color: #fff;
 }
 
+.transparent {
+  color: transparent;
+}
+
 .spacer {
   display: inline-block;
   color: transparent;
   /*color: #fff*/
+}
+
+.fa-bars {
+  display: inline;
+  float: right;
+  margin: 30px 5% 0 0;
+}
+
+.fa-times {
+  display: none;
+}
+
+.menu {
+  font-family: 'Raleway', Serif;
+}
+
+.menu.open {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.menu.open .fa-bars {
+  display: none;
+}
+
+.menu.open .fa-times {
+  display: inline;
+  float: right;
+  margin: 30px 5% 0 0;
+}
+
+.menu.open .menu-items {
+  display: block;
+}
+
+.menu-icons {
+  display: inline;
+  color: #fff;
+  font-size: 25px;
+  padding: 10px;
+  margin-right: 5%;
+}
+
+.menu-items {
+  display: none;
+}
+
+.menu-items li {
+  padding: 10px 0;
+  text-align: center;
+  text-transform: uppercase;
+  display: block;
+}
+
+.menu-items a {
+  text-decoration: none;
+  color: #ffffff;
 }
 
 .jumbotron {
