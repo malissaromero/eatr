@@ -103,7 +103,7 @@ a.nav-button:active {
 .fa-bars {
   display: inline;
   float: right;
-  margin: 30px 5% 0 0;
+  margin: 30px 10% 0 0;
 }
 
 .fa-times {
@@ -125,7 +125,7 @@ a.nav-button:active {
 .menu.open .fa-times {
   display: inline;
   float: right;
-  margin: 30px 5% 0 0;
+  margin: 30px 10% 0 0;
 }
 
 .menu.open .menu-items {
@@ -245,14 +245,14 @@ h1, h3 {
 }
 
 .img-circle {
-  width: 60%;
+  width: 70%;
   height: auto;
 }
 
 .picture-two {
   position: relative;
   top: 127px;
-  right: -44%;
+  right: -38%;
 }
 
 .picture-one {
@@ -321,6 +321,10 @@ h1, h3 {
 .plate-three {
   background: #c74c10;
   height: 600px;
+}
+
+.plate-three img {
+  max-width: 100%;
 }
 
 .search-section {
@@ -459,6 +463,10 @@ h4 {
   line-height: 2;
   font-weight: 400;
   float: right;
+}
+
+.edit, .save, .delete {
+  /*float: right;*/
 }
 
 .recipes.editing-recipe .actions{

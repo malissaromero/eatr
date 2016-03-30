@@ -1,3 +1,45 @@
+@media screen and (max-width: 600px) {
+  .jumbotron {
+    margin: 10% 0;
+    text-align: center;
+  }
+
+  .about {
+    text-align: center;
+  }
+
+  .img-circle {
+    width: 80% !important;
+  }
+
+  .picture-one {
+    left: -4%
+  }
+
+  .picture-two {
+    right: -21%;
+    top: 158px;
+    bottom: 2%;
+  }
+
+  .my-recipes-section {
+    text-align: center;
+  }
+
+  .my-recipes-list {
+    text-align: left;
+  }
+
+  .directions {
+    margin-bottom: 15% !important;
+  }
+
+  .actions .save .delete {
+    float: none;
+  }
+
+}
+
 @media screen and (min-width: 991px) {
   .menu.open {
     background-color: rgba(0, 0, 0, 0);
@@ -31,6 +73,10 @@
     top: 2%;
   }
 
+  .img-circle {
+    width: 50%;
+  }
+
   .plate-one {
     height: 50%;
   }
@@ -55,5 +101,9 @@
 
   .plate-three span {
     padding: 10px 0 0 0;
+  }
+
+  .directions {
+    margin-bottom: 5%;
   }
 }
