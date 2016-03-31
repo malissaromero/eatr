@@ -1,6 +1,6 @@
 @media screen and (max-width: 600px) {
   .jumbotron {
-    margin: 10% 0;
+    margin: 30% 0;
     text-align: center;
   }
 
@@ -37,7 +37,16 @@
   .actions .save .delete {
     float: none;
   }
+}
 
+@media screen and (max-width: 650px) {
+  .footer-links a {
+    display: none
+  }
+
+  .top-link {
+    display: block !important;
+  }
 }
 
 @media screen and (min-width: 991px) {

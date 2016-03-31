@@ -112,6 +112,10 @@ a.nav-button:active {
 
 .menu {
   font-family: 'Raleway', Serif;
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 99999;
 }
 
 .menu.open {
@@ -144,8 +148,12 @@ a.nav-button:active {
   display: none;
 }
 
+.nav-link li:nth-child(1) {
+  margin-top: -5px;
+}
+
 .menu-items li {
-  padding: 10px 0;
+  padding: 2px 0;
   text-align: center;
   text-transform: uppercase;
   display: block;
@@ -163,7 +171,7 @@ a.nav-button:active {
   margin-left: 70px;
   line-height: 2.25;
   color: #fff;
-  margin-top: 10%;
+  margin-top: 20%;
   margin-bottom: 10%;
 }
 
@@ -300,7 +308,7 @@ h1, h3 {
 
 .recipe-search-button:hover {
   background-color: #A6CFE0;
-  color: #f39c12;
+  color: #fff;
 }
 
 .recipe-search-button:active {
@@ -353,6 +361,11 @@ h1, h3 {
 .search-results {
   /*margin: 0 0 50px 0;*/
   padding: 0;
+  margin-bottom: 9px;
+}
+
+.search-results ul {
+  margin
 }
 
 .search-results a {
@@ -363,7 +376,7 @@ h1, h3 {
 }
 
 .list-style {
-  font-size: 17px;
+  font-size: 15px;
   list-style-type: none;
 }
 
@@ -372,9 +385,17 @@ h1, h3 {
   color: #fff;
   font-weight: 400;
   font-family: Raleway, sans-serif;
-  line-height: 3.428571;
+  line-height: 2.428571;
   font-size: 17px;
   display: block;
+}
+
+.directions-link:hover {
+  color: #A6CFE0;
+}
+
+.ingredients-link {
+  font-size: 17px !important;
 }
 
 h4 {
@@ -513,4 +534,8 @@ h4 {
 .second-footer small {
   font-weight: 300;
   color: #f39c12;
+}
+
+.top-link {
+  display: none;
 }
