@@ -1,6 +1,14 @@
+@media (max-width: 568px) {
+  .actions {
+    /*float: left;*/
+    /*margin-top: 0px !important;*/
+    /*margin-right: 4px;*/
+  }
+}
+
 @media screen and (max-width: 600px) {
   .jumbotron {
-    margin: 30% 0;
+    margin: 40% 0 10% 0;
     text-align: center;
   }
 
@@ -9,7 +17,7 @@
   }
 
   .img-circle {
-    width: 80% !important;
+    width: 90% !important;
   }
 
   .picture-one {
@@ -36,6 +44,22 @@
 
   .actions .save .delete {
     float: none;
+  }
+
+  .about-row {
+    margin-top: -35px;
+  }
+
+  .my-recipes-section {
+    padding: 2rem 5%;
+  }
+
+  .my-recipes-headers h3 {
+    padding: .5em;
+  }
+
+  .search-section {
+    margin: -10% 0;
   }
 }
 
@@ -83,7 +107,7 @@
   }
 
   .img-circle {
-    width: 50%;
+    width: 55%;
   }
 
   .plate-one {
