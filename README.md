@@ -41,9 +41,9 @@ The challenge has been addressed by pushing the recipe id into the recipe object
 
 ##User Stories
 
-As a user, I can add recipes to a list.
-As a user, I can edit recipes in my list. 
-As a user, I can delete recipes in my list. 
-As a user, I can update recipes in my list. 
-As a user, I can search recipes.
-As a user, I can see details about a specific recipe.
+ - As a user, I can add recipes to a list.
+ - As a user, I can edit recipes in my list. 
+ - As a user, I can delete recipes in my list. 
+ - As a user, I can update recipes in my list. 
+ - As a user, I can search recipes.
+ - As a user, I can see details about a specific recipe.
